@@ -1,0 +1,104 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Compiled source and libraries
+*.o
+*.a
+*.so
+*.x
+*.dll
+*.lib
+*.exe
+*.VC.db
+*.VC.opendb
+*.sdf
+*.suo
+*.opensdf
+*.vcxproj.user
+*.vcxproj.filters
+#*.zip
+#*.rar
+
+# video data
+*.avi
+*.mp4
+*.rmvb
+
+# Matlab temporary files
+*.asv
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Compiled binaries and temporary library files
+#bin
+lib
+ipch
+.vs
+debug
+release
+x64
+# build/vs2015
+# build/vs2013
+deps/bin
+3rdparty/bin
+3rdparty/lib
+3rdparty/gnu
+3rdparty/tracking/zip
+3rdparty/detection/zip
+3rdparty/machine_learning/zip
+3rdparty/tracking/source
+3rdparty/tracking/trackers_m/ECO/external_libs/matconvnet/matlab/vl_nnconv.mexw64
+3rdparty/tracking/trackers_m/ECO/external_libs/matconvnet/matlab/vl_nnnormalize.mexw64
+3rdparty/tracking/trackers_m/ECO/external_libs/matconvnet/matlab/vl_nnpool.mexw64
+3rdparty/tracking/trackers_m/ECO/external_libs/mexResize/mexResize.mexw64
+3rdparty/tracking/trackers_m/ECO/external_libs/mtimesx/mtimesx.mexw64
+3rdparty/tracking/trackers_m/ECO/external_libs/pdollar_toolbox/channels/private/gradientMex.mexw64
+3rdparty/Reconstruction
+
+deps/zip
+deps/source
+doc/BuildingBoundaryDetection
+doc/MOT

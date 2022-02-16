@@ -1,0 +1,75 @@
+3rdparty_INC=/usr/include
+
+EIGEN_INC=$(3rdparty_INC)/eigen3
+FLANN_INC=$(3rdparty_INC)/flann
+BOOST_INC=$(3rdparty_INC)/boost
+PCL_INC=$(3rdparty_INC)/pcl-1.8
+GDAL_INC=$(3rdparty_INC)/GDAL
+PROJ_INC=$(3rdparty_INC)/proj
+GEOS_INC=$(3rdparty_INC)/geos
+
+3rdparty_LIB=/usr/lib
+CGAL_LIB=/usr/local/lib
+
+BIN=debug
+
+#IPL_DIR = ./../..
+IPL_DIR = /mnt/hgfs/code_ipl
+BIN_DIR= $(IPL_DIR)/bin/ubuntu/$(BIN)
+IPL_INC=$(IPL_DIR)/include
+IPL_SRC=$(IPL_DIR)/src
+IPL_TESTS=$(IPL_DIR)/tests
+IPL_MODULE_SRC=$(IPL_SRC)/modules
+IPL_PLUGIN_SRC=$(IPL_SRC)/plugins
+
+#for Modules
+MODULE_DIR=$(BIN_DIR)/modules
+MODULE_DLL=$(MODULE_DIR)/$(MODULE).so
+
+#for Plugins
+PLUGIN_DIR=$(BIN_DIR)/plugins
+PLUGIN_DLL=$(PLUGIN_DIR)/$(PLUGIN).so
+
+#for Applications
+APP_EXE=$(BIN_DIR)/$(APP).x
+
+#for Modules only
+#SRC_DIR= $(IPL_SRC)/$(MODULE)
+
+OBJ_DIR=./$(BIN)
+
+ICPC_LIB = /opt/intel/cce/10.1.015/lib/
+
+#CC=mpicc
+#CXX=mpicxx
+#LD=mpicxx
+
+
+CC = gcc
+CXX = g++
+LD = g++
+
+
+ifeq ($(BIN),debug)
+
+CFLAGS = -g -O0 -fPIC -I$(3rdparty_INC) -I$(EIGEN_INC) -I$(FLANN_INC) \
+-I$(BOOST_INC) -I$(PCL_INC) -I$(GDAL_INC) -I$(PROJ_INC) -I$(GEOS_INC) -I$(IPL_INC) -DLINUX64 -D_DEBUG
+CXXFLAGS=-std=c++11 $(CFLAGS) $(CPPFLAGS)
+
+LNKFLAGS = -O0 -g  -L$(BIN_DIR) -L$(ICPC_LIB) -L$(3rdparty_LIB) -L$(CGAL_LIB)
+
+else
+
+#CFLAGS =  -fPIC -O2 -openmp -openmp-lib=compat -I$(3rdparty_INC) -I$(EIGEN_INC) -I$(FLANN_INC) -I$(BOOST_INC) -I$(PCL_INC) -I$(GDAL_INC) -I$(PROJ_INC) -I$(GEOS_INC) -I$(IPL_INC) -DLINUX64
+
+CFLAGS =  -fPIC -O2 -I$(3rdparty_INC) -I$(EIGEN_INC) -I$(FLANN_INC) -I$(BOOST_INC) \
+-I$(PCL_INC) -I$(GDAL_INC) -I$(PROJ_INC) -I$(GEOS_INC) -I$(IPL_INC) -DLINUX64
+
+CXXFLAGS=-std=c++11 $(CFLAGS)
+
+LNKFLAGS = -fPIC -O0  -L$(BIN_DIR) -L$(ICPC_LIB) -L$(3rdparty_LIB) -L$(CGAL_LIB)
+
+#LNKFLAGS = -fPIC -O0 -openmp -openmp-lib=compat  -L$(GDAL_LIB) -L$(ICPC_LIB)  -L$(BIN_DIR)
+
+endif
+

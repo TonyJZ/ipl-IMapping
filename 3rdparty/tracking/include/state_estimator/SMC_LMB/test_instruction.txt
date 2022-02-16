@@ -1,0 +1,9 @@
+1.test data
+  (1) KITTI-17
+  (2) PETS09-S2L1
+
+det is the detection result.
+img1 contains the images extracted from the video.
+
+
+2.the filter interface is runFilter, which uses detected boundboxes (observations) to predict the optimized states. I'm very confused about the implementation.
